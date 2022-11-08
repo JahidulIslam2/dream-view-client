@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const Card = ({ item }) => {
-    console.log(item)
     const { name, img, price, rating, descripion,_id } = item;
 
     return (
@@ -21,7 +20,7 @@ const Card = ({ item }) => {
                     <input type="radio" name="rating-1" className="mask mask-star h-4" checked />
                 </div></p>
                 <p className='text-xl f'> {descripion.slice(0, 100) + '....'}</p>
-                <Link to={`/services/:${_id}`}>
+                <Link to="/services">
                     <p className='text-lime-500 text-xl text-right hover:text-gray-800'>
                     See all
                     </p>

@@ -4,7 +4,6 @@ import image2 from "../../../assets/2.png";
 import image3 from "../../../assets/3.png";
 import image4 from "../../../assets/4.png";
 import image5 from "../../../assets/5.png";
-import Services from '../../share/services/Services';
 import { useLoaderData } from 'react-router-dom';
 import Card from '../../share/card/Card';
 
