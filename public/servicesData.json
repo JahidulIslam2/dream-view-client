@@ -1,0 +1,51 @@
+[
+{
+    
+    "name": "Building Design",
+    "img": "https://www.evangelarchitect.com/wp-content/uploads/2022/10/BXM0003.jpg",
+    "price": "$5,296",
+    "rating": "4.5",
+    "descripion": "Professional and efficient development of new construction or renovation plans that successfully resolve a client’s space planning and design requirements.Every building starts with a concept and a design. Architects are involved at every stage of the process, even after a design has been finalized, helping other building team members through the snares and missteps in the construction process"
+},
+{
+    
+    "name": "Space Planning",
+    "img": "https://alladiyally.com/wp-content/uploads/2016/05/5-2.jpg",
+    "price": "$2,340",
+    "rating": "3.5",
+    "descripion": "Space planning is an essential step in the interior design process. Without proper space planning, you risk creating a design that is not optimal and that doesn't work well for your client The key to a successful design job starts with determining the purpose of the space being designed. As a professional, it is your job to ask all the right questions and gather all the necessary information to plan out a functional space that suits your client's needs"
+},
+{
+    
+    "name": "Code Analysis",
+    "img": "https://blog.embold.io/wp-content/uploads/sites/2/2020/12/image1.jpg",
+    "price": "$524",
+    "rating": "4.0",
+    "descripion": " Project-specific review of applicable codes including building codes accessibility standards energy standards local zoning ordinances land use plans and other regulations.A code analysis is a systematic review and compilation of the specific provisions of the locally adopted building code that will affect the design and construction of a building or facility."
+},
+{
+    
+    "name": "Site Planning",
+    "img": "https://maricamckeel.com/wp-content/uploads/2016/05/Watercolors-for-Siteplan-1024x641.jpg",
+    "price": "$2500",
+    "rating": "4.0",
+    "descripion": "Site planning is the part of the architectural process where you organize access to the plot of land, drainage and gradients, privacy, and, importantly, the layout of all of the structures planned for the property.Development of site plan options showing boundary lines, potential development boundaries, building location(s), pedestrian access, sidewalks, parking, landscaping, lighting, surrounding context and other features."
+},
+{
+    
+    "name": "Permitting",
+    "img": "https://www.sandiego.gov/sites/default/files/card-permitted.jpg",
+    "price": "$380",
+    "rating": "3.5",
+    "descripion": " Production of drawings and permit applications necessary to submit for zoning or building permits. May include formal presentations to review boards or informal negotiation with regulators, zoning/planning administrators, fire marshals, and other officials."
+},
+{
+    
+    "name": "Energy-Efficiency Assessments",
+    "img": "https://www.electricaltesters.com/assets/Uploads/energy-efficiency.jpg",
+    "price": "$3850",
+    "rating": "3.9",
+    "descripion": "Review of building components, insulation levels, heating and lighting systems, and operational features to assess current performance levels and opportunities for energy savings.An energy survey involves qualified engineers visiting a site or building to assess all areas of the building's energy usage. They will look at where and when energy is being used"
+}
+
+]
