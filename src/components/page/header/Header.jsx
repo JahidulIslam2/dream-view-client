@@ -99,7 +99,7 @@ const Header = () => {
                         Sign in
                     </Link>
                     <Link
-                        to="/signUp"
+                        to="/singUp"
                         className="px-4 py-2 text-gray-800 bg-white rounded-md shadow hover:bg-gray-100"
                     >
                         Sign up
