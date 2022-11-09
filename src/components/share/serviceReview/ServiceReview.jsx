@@ -3,7 +3,7 @@ import Lottie  from 'react-lottie';
 import animation from "../../../assets/animation.json";
 import Review from './Review';
 
-const ServiceReview = () => {
+const ServiceReview = ({detail}) => {
     return (
         <div>
             <div className="container flex flex-col w-full max-w-lg p-6 mx-auto divide-y rounded-md divide-gray-700 dark:bg-gray-500 dark:text-white">
@@ -32,7 +32,7 @@ const ServiceReview = () => {
 
             {/* review input */}
             <div>
-              <Review></Review>
+              <Review detail={detail} key={detail._id}></Review>
             </div>
         </div>
     );

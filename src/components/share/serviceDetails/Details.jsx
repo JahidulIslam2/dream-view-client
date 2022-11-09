@@ -25,7 +25,7 @@ const Details = ({ detail }) => {
 
             {/* Review Section */}
             <div>
-               <ServiceReview></ServiceReview>
+               <ServiceReview detail={detail} key={detail._id}></ServiceReview>
             </div>
         </div>
     );

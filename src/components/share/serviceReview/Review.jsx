@@ -1,13 +1,41 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { ProvideContext } from '../../../provideAuth/ProvideAuth';
 
-const Review = () => {
+const Review = ({detail}) => {
+    const {_id,name}=detail
+    const {user} =useContext(ProvideContext)
+    const photo =user?.photoURL;
+
+
     const handleForm =(event)=>{
         event.preventDefault();
         const form= event.target;
         const name =  form.name.value;
         const email=form.email.value;
         const message = form.message.value;
-        console.log(name, email, message);
+        form.reset();
+        const review ={
+            name,
+            email,
+            message,
+            userPhoto:photo,
+            id:_id
+            }
+
+            fetch('http://localhost:5000/review',{
+                method: 'POST',
+                headers: {
+                    'content-type': 'application/json',
+                },
+                body: JSON.stringify(review)
+            })
+            .then(res => res.json())
+            .then(data => {
+                 console.log(data)
+            })
+            .catch(err=>{
+                console.error(err)
+            })
         
 
     }
@@ -18,8 +46,9 @@ const Review = () => {
             <div className="grid max-w-screen-xl grid-cols-1 gap-8 px-8 py-16 mx-auto rounded-lg md:grid-cols-2 md:px-12 lg:px-16 xl:px-32 dark:text-gray-100">
                 <div className="flex flex-col justify-between">
                     <div className="space-y-2">
-                        <h2 className="text-4xl font-bold leading-tight lg:text-5xl">Let's talk!</h2>
-                        <div className="dark:text-gray-400">Vivamus in nisl metus? Phasellus.</div>
+                        <h2 className="text-4xl font-bold leading-tight lg:text-5xl">Service Review</h2>
+                        <h3 className='text-2xl font-semibold leading-tight lg:text-3xl text-green-300'>{name}</h3>
+                        <div className="dark:text-gray-400">Here Write your valuable Opinion</div>
                     </div>
                     <img src="assets/svg/doodle.svg" alt="" className="p-6 h-52 md:h-64" />
                 </div>

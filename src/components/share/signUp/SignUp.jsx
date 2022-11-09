@@ -1,7 +1,46 @@
 import React from 'react';
+import { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { ProvideContext } from '../../../provideAuth/ProvideAuth';
 
 const SignUp = () => {
+    const {signUpWithEmailAndpass,updateUsers} =useContext(ProvideContext);
+
+    const formHandler =(event) =>{
+            event.preventDefault();
+            const form =event.target;
+            const name = form.name.value;
+            const email = form.email.value;
+            const password = form.password.value;
+            const photoURL = form.photoURL.value;
+            console.log(name,email,password)
+
+            signUpWithEmailAndpass(email,password)
+            .then(result =>{
+                const user=result.user;
+                console.log(user)
+                form.reset()
+                UserInfo(name,photoURL);
+            })
+            .catch((error)=>{
+                console.error(error)
+           
+            })
+    }
+
+    const UserInfo=(name,photoURL) =>{
+        const profile={
+            displayName:name,
+            photoURL:photoURL,
+        }
+        updateUsers(profile)
+        .then(()=>{})
+        .catch((error)=> console.error(error))
+
+    }
+
+    
+
     return (
         <div>
             <div className="flex flex-col items-center min-h-screen pt-6 sm:justify-center sm:pt-0 bg-blue-300">
@@ -14,7 +53,7 @@ const SignUp = () => {
                         </h3>
                     </a>
                 </div>
-                    <form>
+                    <form onSubmit={formHandler}>
                         <div>
                             <label
                                 htmlFor="name"
@@ -49,6 +88,22 @@ const SignUp = () => {
                         </div>
                         <div className="mt-4">
                             <label
+                                htmlFor="email"
+                                className="block text-sm font-medium text-gray-700 undefined"
+                            >
+                                PhotoURL
+                            </label>
+                            <div className="flex flex-col items-start">
+                                <input
+                                    type="url"
+                                    name="photoURL"
+                                    className="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50
+                                    py-2 text-lg"
+                                />
+                            </div>
+                        </div>
+                        <div className="mt-4">
+                            <label
                                 htmlFor="password"
                                 className="block text-sm font-medium text-gray-700 undefined"
                             >
@@ -58,22 +113,6 @@ const SignUp = () => {
                                 <input
                                     type="password"
                                     name="password"
-                                    className="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50
-                                    py-2 text-lg"
-                                />
-                            </div>
-                        </div>
-                        <div className="mt-4">
-                            <label
-                                htmlFor="password_confirmation"
-                                className="block text-sm font-medium text-gray-700 undefined"
-                            >
-                                Confirm Password
-                            </label>
-                            <div className="flex flex-col items-start">
-                                <input
-                                    type="password"
-                                    name="password_confirmation"
                                     className="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50
                                     py-2 text-lg"
                                 />
