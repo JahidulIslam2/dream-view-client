@@ -23,7 +23,8 @@ import Root from '../root/Root';
                 },
                 {
                     path:'/serviceDetails/:id',
-                    element:<ServiceDetails></ServiceDetails>
+                    element:<ServiceDetails></ServiceDetails>,
+                    loader: ({params})=> fetch(`http://localhost:5000/serviceDetails/${params.id}`)
                 }
             ]
         }

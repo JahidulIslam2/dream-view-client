@@ -1,9 +1,12 @@
 import React from 'react';
+import { useLoaderData } from 'react-router-dom';
+import Details from './Details';
 
 const ServiceDetails = () => {
+    const details = useLoaderData();
     return (
         <div>
-            <h1>hello</h1>
+            <Details detail={details} key={details._id}></Details>
         </div>
     );
 };
