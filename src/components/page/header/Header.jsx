@@ -93,13 +93,13 @@ const Header = () => {
                 </div>
                 <div className="hidden space-x-2 md:inline-block">
                     <Link
-                        to="javascript:void(0)"
+                        to="/Login"
                         className="px-4 py-2 text-white bg-gray-600 rounded-md shadow hover:bg-gray-800"
                     >
                         Sign in
                     </Link>
                     <Link
-                        to="javascript:void(0)"
+                        to="/signUp"
                         className="px-4 py-2 text-gray-800 bg-white rounded-md shadow hover:bg-gray-100"
                     >
                         Sign up
