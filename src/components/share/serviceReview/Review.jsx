@@ -8,8 +8,7 @@ const Review = () => {
         const email=form.email.value;
         const message = form.message.value;
         console.log(name, email, message);
-
-        alert(message);
+        
 
     }
 
