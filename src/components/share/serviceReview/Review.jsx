@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext} from 'react';
 import { ProvideContext } from '../../../provideAuth/ProvideAuth';
 
 const Review = ({detail}) => {
@@ -39,7 +39,6 @@ const Review = ({detail}) => {
         
 
     }
-
 
     return (
         <div>
