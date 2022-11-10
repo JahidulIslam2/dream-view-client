@@ -1,6 +1,7 @@
 import React from 'react';
 import { createBrowserRouter } from "react-router-dom";
 import Home from '../components/page/home/Home';
+import AddService from '../components/share/addService/AddService';
 import Login from '../components/share/login/Login';
 import ServiceDetails from '../components/share/serviceDetails/ServiceDetails';
 import Review from '../components/share/serviceReview/Review';
@@ -48,6 +49,10 @@ import MyReview from './../components/share/myReview/MyReview';
                     path:'/myReview',
                     element: <ProtectedRoute><MyReview></MyReview></ProtectedRoute>
                     
+                },
+                {
+                    path: '/addService',
+                    element: <AddService></AddService>
                 }
             ]
         }
