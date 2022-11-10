@@ -22,11 +22,11 @@ const Header = () => {
     }
 
     return (
-        <nav className="w-full bg-gray-500 shadow">
+        <nav className="w-full bg-gray-700 shadow">
             <div className="justify-between px-4 mx-auto lg:max-w-7xl md:items-center md:flex md:px-8">
                 <div>
                     <div className="flex items-center justify-between py-3 md:py-5 md:block">
-                        <Link to="javascript:void(0)">
+                        <Link to="#">
                             <h2 className="text-2xl font-bold text-white flex gap-2 justify-center">
                                 <img src={`/home.png`} className="w-9 h-auto" alt="icon" />
                                 Dream View Architect
@@ -80,7 +80,7 @@ const Header = () => {
                                 <Link to="/">Home</Link>
                             </li>
                             <li className="text-white hover:text-indigo-200">
-                                <Link to="javascript:void(0)">Blog</Link>
+                                <Link to="/blog">Blog</Link>
                             </li>
                             <li className="text-white hover:text-indigo-200">
                                 <Link to="/myReview">My Review</Link>

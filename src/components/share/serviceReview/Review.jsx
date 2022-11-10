@@ -22,7 +22,7 @@ console.log(user?.email)
             id:_id
             }
 
-            fetch('http://localhost:5000/review',{
+            fetch('https://dream-view-server.vercel.app/review',{
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json',

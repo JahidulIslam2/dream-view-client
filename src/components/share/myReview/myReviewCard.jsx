@@ -15,7 +15,7 @@ const MyReviewCard = ({ reviewData }) => {
 
         const accept = window.confirm('Confirm Delete Item!');
         if (accept) {
-            fetch(`http://localhost:5000/review/${id}`, {
+            fetch(`https://dream-view-server.vercel.app/review/${id}`, {
                 method: 'DELETE',
                 headers: {
                     'Content-Type': 'application/json',
@@ -38,7 +38,7 @@ const MyReviewCard = ({ reviewData }) => {
     }
 //Update review
     const UpdateUser=(id) =>{
-        fetch(`http://localhost:5000/review/${id}`,{
+        fetch(`https://dream-view-server.vercel.app/review/${id}`,{
         method: 'PATCH',    
         headers:{
             'content-type': 'application/json',
@@ -87,4 +87,3 @@ const MyReviewCard = ({ reviewData }) => {
 
 export default MyReviewCard;
 
-// onClick={() => deleteHandler(_id)} 

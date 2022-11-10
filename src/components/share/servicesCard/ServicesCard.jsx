@@ -31,7 +31,13 @@ const ServicesCard = ({ service }) => {
                     </div>
                         <hr />
                     </p>
+                 {    
+                  descripion?.length > 100 ?
                     <p className='text-xl f'> {descripion.slice(0,100)+ '....'}</p>
+                        :
+                        <>{descripion}</>
+                    }
+
                     <Link to={`/serviceDetails/${_id}`}>
                         <p className='text-lime-500 text-xl text-right hover:text-gray-800'>
                             View Details
@@ -50,3 +56,6 @@ const ServicesCard = ({ service }) => {
 };
 
 export default ServicesCard;
+
+
+

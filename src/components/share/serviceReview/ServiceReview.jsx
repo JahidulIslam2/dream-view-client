@@ -10,7 +10,7 @@ const ServiceReview = ({detail}) => {
 
     
     useEffect(()=>{
-        fetch('http://localhost:5000/review')
+        fetch('https://dream-view-server.vercel.app/review')
         .then(res => res.json())
            .then(data => {
             setReviewData(data)

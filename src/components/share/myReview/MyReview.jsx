@@ -9,7 +9,7 @@ const MyReview = () => {
     const [myReview,setMyreview]=useState();
  
     useEffect(()=>{
-        fetch(`http://localhost:5000/myreview?${user?.email}`)
+        fetch(`https://dream-view-server.vercel.app/myreview?${user?.email}`)
         .then(res => res.json())
         .then(data => {
             setMyreview(data);
