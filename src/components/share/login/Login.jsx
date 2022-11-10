@@ -46,14 +46,14 @@ const Login = () => {
                     <div className="space-y-4">
                         <div>
                             <label for="email" className="block mb-2 text-sm">Email address</label>
-                            <input type="email" name="email" id="email" placeholder="email@.com" className="w-full px-3 py-2 border rounded-md dark:border-gray-700 dark:bg-white dark:text-black" />
+                            <input type="email" name="email" id="email" placeholder="email@.com" className="w-full px-3 py-2 border rounded-md dark:border-gray-700 dark:bg-white dark:text-black" required />
                         </div>
                         <div>
                             <div className="flex justify-between mb-2">
                                 <label for="password" className="text-sm">Password</label>
                                 <Link rel="noopener noreferrer" href="#" className="text-xs hover:underline dark:text-black">Forgot password?</Link>
                             </div>
-                            <input type="password" name="password" id="password" placeholder="*****" className="w-full px-3 py-2 border rounded-md dark:border-gray-700 dark:bg-white dark:text-black" />
+                            <input type="password" name="password" id="password" placeholder="*****" className="w-full px-3 py-2 border rounded-md dark:border-gray-700 dark:bg-white dark:text-black" required/>
                         </div>
                     </div>
                     <div className="space-y-2">
