@@ -116,7 +116,7 @@ const Header = () => {
                     :
                     <Link
                         to="/Login"
-                        className="px-4 py-2 text-white bg-gray-600 rounded-md shadow hover:bg-gray-800"
+                        className="px-4 py-2 text-white bg-green-600 rounded-md shadow hover:bg-gray-800"
                     >
                         Sign in
                     </Link>
