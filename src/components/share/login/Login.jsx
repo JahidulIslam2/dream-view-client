@@ -61,7 +61,7 @@ const Login = () => {
                             <button type="btn" className="btn btn-wide px-8 py-3 font-semibold rounded-md dark:bg-blue-400 dark:text-gray-900">Sign in</button>
                         </div>
                         <p className="px-6 text-sm text-center dark:text-black">Don't have an account yet?
-                            <Link rel="noopener noreferrer" to="/singUp" className="hover:underline dark:text-violet-900">Sign up</Link>.
+                            <Link rel="noopener noreferrer" to="/signUp" className="hover:underline dark:text-violet-900">Sign up</Link>.
                         </p>
                         <div>
                             <p className='text-center'>OR</p>

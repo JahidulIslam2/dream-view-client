@@ -8,12 +8,14 @@ import Services from '../components/share/services/Services';
 import SignUp from '../components/share/signUp/SignUp';
 import ProtectedRoute from '../protectedRoute/ProtectedRoute';
 import Root from '../root/Root';
+import MyReview from './../components/share/myReview/MyReview';
 
 
  export const routes=createBrowserRouter([
         {
             path:'/',
             element:<Root></Root>,
+            
             children:[
                 {
                     path:'/',
@@ -35,12 +37,17 @@ import Root from '../root/Root';
                     element:<Login></Login>
                 },
                 {
-                    path:'singUp',
+                    path:'signUp',
                     element: <SignUp></SignUp>
                 },
                 {
                     path: '/review',
-                    element: <ProtectedRoute><Review></Review></ProtectedRoute>
+                    element: <Review></Review>
+                },
+                {
+                    path:'/myReview',
+                    element: <ProtectedRoute><MyReview></MyReview></ProtectedRoute>
+                    
                 }
             ]
         }
