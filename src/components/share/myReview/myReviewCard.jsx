@@ -7,7 +7,7 @@ import toast, { Toaster } from 'react-hot-toast';
 const notify = () => toast('Here is your toast.');
 
 const MyReviewCard = ({ reviewData }) => {
-    const { name, userPhoto, message, email, descripion, _id } = reviewData;
+    const { name, userPhoto, message, email, _id } = reviewData;
     const [reviews, setReview] = useState()
 
 //delete review
