@@ -32,7 +32,7 @@ const ServiceReview = ({detail}) => {
             <div className='grid md:grid-cols-2 lg:grid-cols-2 my-4 m-4 gap-4 sm:grid-cols-1 sm:gap-4'>
             
             {
-                reviewData.map(review => <ReviewCard review={review} key={review._id}></ReviewCard>)
+                reviewData.map(review => <ReviewCard review={review} detail={detail}  key={review._id}></ReviewCard>)
 
             }
            

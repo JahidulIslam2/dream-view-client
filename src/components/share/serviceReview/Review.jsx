@@ -5,13 +5,13 @@ const Review = ({detail}) => {
     const {_id,name}=detail
     const {user} =useContext(ProvideContext)
     const photo =user?.photoURL;
-
+console.log(user?.email)
 
     const handleForm =(event)=>{
         event.preventDefault();
         const form= event.target;
         const name =  form.name.value;
-        const email=form.email.value;
+        const email=user?.email || "Please Login First"
         const message = form.message.value;
         form.reset();
         const review ={
@@ -57,14 +57,14 @@ const Review = ({detail}) => {
                         <input id="name" name='name' type="text" placeholder="Name" className="w-full p-3 rounded dark:bg-gray-800" />
                     </div>
                     <div>
-                        <label for="email" className="text-sm">Email</label>
-                        <input id="email" name='email' type="email" className="w-full p-3 rounded dark:bg-gray-800" />
+                        <label for="email" defaultValue={user?.email} className="text-sm">Email</label>
+                        <input id="email" name='email' type="email" placeholder='email' className="w-full p-3 rounded dark:bg-gray-800" />
                     </div>
                     <div>
                         <label for="message" className="text-sm">Write Review</label>
                         <textarea id="message" name='message' rows="3" className="w-full p-3 rounded dark:bg-gray-800"></textarea>
                     </div>
-                    <button type="submit" className="w-full p-3 text-sm font-bold tracking-wide uppercase rounded dark:bg-violet-400 dark:text-gray-900">Submit Review</button>
+                    <button type="submit" className="w-full p-3 text-sm font-bold tracking-wide uppercase rounded dark:bg-green-300 dark:text-gray-900">Submit Review</button>
                 </form>
             </div>
         </div>

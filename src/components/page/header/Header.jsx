@@ -1,10 +1,25 @@
 import React from 'react';
+import { useContext } from 'react';
 import { useState } from "react";
 import { Link } from 'react-router-dom';
+import { ProvideContext } from '../../../provideAuth/ProvideAuth';
 
 const Header = () => {
+    const {LogOut,user}=useContext(ProvideContext)
 
     const [navbar, setNavbar] = useState(false);
+
+
+    const logOutHandler=() =>{
+        LogOut()
+        .then(()=>{
+            alert('sign Out successfully')
+        })
+        
+        .catch((error) =>{
+            console.error(error)
+        })
+    }
 
     return (
         <nav className="w-full bg-gray-500 shadow">
@@ -92,12 +107,21 @@ const Header = () => {
                     </div>
                 </div>
                 <div className="hidden space-x-2 md:inline-block">
+                  {  user?.email ? 
+                    <button onClick={logOutHandler}
+                        className="px-4 py-2 text-white bg-gray-600 rounded-md shadow hover:bg-gray-800"
+                    >
+                        Sign Out
+                    </button>
+                    :
                     <Link
                         to="/Login"
                         className="px-4 py-2 text-white bg-gray-600 rounded-md shadow hover:bg-gray-800"
                     >
                         Sign in
                     </Link>
+                    
+                    }
                     <Link
                         to="/singUp"
                         className="px-4 py-2 text-gray-800 bg-white rounded-md shadow hover:bg-gray-100"
