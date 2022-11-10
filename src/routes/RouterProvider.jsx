@@ -11,13 +11,14 @@ import ProtectedRoute from '../protectedRoute/ProtectedRoute';
 import Root from '../root/Root';
 import MyReview from './../components/share/myReview/MyReview';
 import Blog from './../components/page/Blog/Blog';
+import Error from '../components/page/error/Error';
 
 
  export const routes=createBrowserRouter([
         {
             path:'/',
             element:<Root></Root>,
-            
+            errorElement:<Error></Error>,
             children:[
                 {
                     path:'/',
@@ -58,6 +59,7 @@ import Blog from './../components/page/Blog/Blog';
                 {
                     path: '/blog',
                     element: <Blog></Blog>
+                    
                 }
             ]
         }
