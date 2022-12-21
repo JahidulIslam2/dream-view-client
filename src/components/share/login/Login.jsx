@@ -2,13 +2,17 @@ import React from 'react';
 import { useContext } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { ProvideContext } from '../../../provideAuth/ProvideAuth';
+import { toast } from 'react-hot-toast';
+import Loader from '../../loader/Loader';
+import { useState } from 'react';
 
 const Login = () => {
-    const { LoginWithEmailAndPass, GoogleSignIn } = useContext(ProvideContext);
-    const location =useLocation();
-    const navigate=useNavigate();
+    const { LoginWithEmailAndPass, GoogleSignIn, loading } = useContext(ProvideContext);
+    const location = useLocation();
+    const navigate = useNavigate();
+    const [error, setError] = useState()
 
-    const from =location.state?.from?.pathname || "/"
+    const from = location.state?.from?.pathname || "/"
     const HandleForm = (event) => {
         event.preventDefault();
         const form = event.target;
@@ -16,22 +20,36 @@ const Login = () => {
         const password = form.password.value;
         console.log(email, password);
 
+        //email and password login
         LoginWithEmailAndPass(email, password)
             .then((result) => {
                 const user = result.user;
                 console.log(user);
-                navigate(from,{replace:true});
+                navigate(from, { replace: true });
+                toast.success("Login Successful")
             })
-            .catch((error) => console.error(error))
+            .catch((error) => {
+                console.error(error)
+                if(error){
+                    return setError(error.message)
+                    
+                }
+                
+            })
 
     }
-
+// google login
     const googleLogIn = () => {
         GoogleSignIn()
             .then((user) => {
                 console.log(user);
+                navigate(from, { replace: true });
+                toast.success("Login Successful")
             })
-            .catch((error) => console.error(error))
+            .catch((error) => {console.error(error)
+            toast.error("Sorry login failed")
+           
+        })
 
     }
     return (
@@ -53,12 +71,17 @@ const Login = () => {
                                 <label for="password" className="text-sm">Password</label>
                                 <Link rel="noopener noreferrer" href="#" className="text-xs hover:underline dark:text-black">Forgot password?</Link>
                             </div>
-                            <input type="password" name="password" id="password" placeholder="*****" className="w-full px-3 py-2 border rounded-md dark:border-gray-700 dark:bg-white dark:text-black" required/>
-                        </div>
+                            <input type="password" name="password" id="password" placeholder="*****" className="w-full px-3 py-2 border rounded-md dark:border-gray-700 dark:bg-white dark:text-black" required />
+                        
+                        {
+                            error && <p className='text-red-600'>{error.slice(9)}</p>
+                        }
+                        </div>       
+                           
                     </div>
                     <div className="space-y-2">
                         <div>
-                            <button type="btn" className="btn btn-wide px-8 py-3 font-semibold rounded-md dark:bg-blue-400 dark:text-gray-900">Sign in</button>
+                            <button type="btn" className="btn btn-wide px-8 py-3 font-semibold rounded-md dark:bg-blue-400 text-white focus:bg-black">Sign in</button>
                         </div>
                         <p className="px-6 text-sm text-center dark:text-black">Don't have an account yet?
                             <Link rel="noopener noreferrer" to="/signUp" className="hover:underline dark:text-violet-900">Sign up</Link>.

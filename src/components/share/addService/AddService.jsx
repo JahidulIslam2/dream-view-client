@@ -38,26 +38,26 @@ const AddService = () => {
     }
 
     return (
-        <div>
-            <h1 className='text-center font-bold text-5xl font-serif mt-7'>
+        <div className=''>
+            <h1 className='text-center font-bold text-5xl font-serif mt-7 '>
                 Add Service
             </h1>
             <div className="grid max-w-screen-md grid-cols-1 gap-8 px-8 py-16 mx-auto rounded-lg md:grid-cols-1 md:px-12 lg:px-16 xl:px-32 dark:text-gray-100 bg-blue-300">
-                <form onSubmit={handleForm} novalidate="" className="space-y-6 ng-untouched ng-pristine ng-valid">
+                <form onSubmit={handleForm} noValidate="" className="space-y-6 ng-untouched ng-pristine ng-valid">
                     <div>
-                        <label for="name" className="text-sm">Service Name</label>
+                        <label htmlFor="name" className="text-sm">Service Name</label>
                         <input id="name" name='name' type="text" placeholder="service" className="w-full p-3 rounded dark:bg-gray-800" />
                     </div>
                     <div>
-                        <label for="image" className="text-sm">Image</label>
+                        <label htmlFor="image" className="text-sm">Image</label>
                         <input id="image" name='imageUrl' type="Photo" placeholder='Image' className="w-full p-3 rounded dark:bg-gray-800" />
                     </div>
                     <div>
-                        <label for="price" className="text-sm">Price</label>
+                        <label htmlFor="price" className="text-sm">Price</label>
                         <input id="Price" name='price' type="price" placeholder='Price' className="w-full p-3 rounded dark:bg-gray-800" />
                     </div>
                     <div>
-                        <label for="description" className="text-sm">description</label>
+                        <label htmlFor="description" className="text-sm">description</label>
                         <textarea id="description" name='description' rows="3" className="w-full p-3 rounded dark:bg-gray-800" placeholder='description'></textarea>
                     </div>
                     <button type="submit" className="w-3/4 p-3 text-sm font-bold tracking-wide uppercase rounded dark:bg-green-300 dark:text-gray-900 mx-16">Submit Review</button>

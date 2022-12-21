@@ -21,28 +21,28 @@ const ProvideAuth = ({ children }) => {
 
 
     const signUpWithEmailAndpass = (email, password) => {
-        setUser(true)
+        setLoader(true)
         return createUserWithEmailAndPassword(auth, email, password)
 
     }
 
     const LoginWithEmailAndPass = (email, password) => {
-        setUser(true)
+        setLoader(true)
         return signInWithEmailAndPassword(auth, email, password)
     }
 
     const GoogleSignIn = () => {
-        setUser(true)
+        setLoader(true)
         return signInWithPopup(auth, googleProvider)
     }
 
     const updateUsers = (profile) => {
-        setUser(true)
+        setLoader(true)
         return updateProfile(auth.currentUser, profile)
     }
 
     const LogOut = () => {
-        setUser(true)
+        setLoader(true)
         return signOut(auth)
     }
 

@@ -5,20 +5,20 @@ import { Link } from 'react-router-dom';
 import { ProvideContext } from '../../../provideAuth/ProvideAuth';
 
 const Header = () => {
-    const {LogOut,user}=useContext(ProvideContext)
+    const { LogOut, user } = useContext(ProvideContext)
 
     const [navbar, setNavbar] = useState(false);
 
 
-    const logOutHandler=() =>{
+    const logOutHandler = () => {
         LogOut()
-        .then(()=>{
-            alert('sign Out successfully')
-        })
-        
-        .catch((error) =>{
-            console.error(error)
-        })
+            .then(() => {
+                alert('sign Out successfully')
+            })
+
+            .catch((error) => {
+                console.error(error)
+            })
     }
 
     return (
@@ -30,11 +30,11 @@ const Header = () => {
                             <h2 className="text-2xl font-bold text-white flex gap-2 justify-center">
                                 <img src={`/home.png`} className="w-9 h-auto" alt="icon" />
                                 Dream View Architect
-                                </h2>
+                            </h2>
                         </Link>
                         <div className="md:hidden">
                             <button
-                                className="p-2 text-gray-700 rounded-md outline-none focus:border-gray-400 focus:border"
+                                className="p-2 text-gray-700 rounded-md outline-none focus:border-gray-400 focus:border "
                                 onClick={() => setNavbar(!navbar)}
                             >
                                 {navbar ? (
@@ -76,30 +76,42 @@ const Header = () => {
                             }`}
                     >
                         <ul className="items-center justify-center space-y-8 md:flex md:space-x-6 md:space-y-0">
-                            <li className="text-white hover:text-indigo-200">
+                            <li className="text-white hover:text-indigo-200 focus:text-indigo-300">
                                 <Link to="/">Home</Link>
                             </li>
-                            <li className="text-white hover:text-indigo-200">
+                            <li className="text-white hover:text-indigo-200 focus:text-indigo-300">
                                 <Link to="/blog">Blog</Link>
                             </li>
-                            <li className="text-white hover:text-indigo-200">
+                            <li className="text-white hover:text-indigo-200 focus:text-indigo-300">
                                 <Link to="/myReview">My Review</Link>
                             </li>
-                            <li className="text-white hover:text-indigo-200">
+                            <li className="text-white hover:text-indigo-200 focus:text-indigo-300">
                                 <Link to="/addService">Add Service</Link>
                             </li>
                         </ul>
 
                         <div className="mt-3 space-y-2 lg:hidden md:inline-block">
-                            <Link
-                                to="/Login"
-                                className="inline-block w-full px-4 py-2 text-center text-white bg-gray-600 rounded-md shadow hover:bg-gray-800"
-                            >
-                                Sign in
-                            </Link>
+                            {user?.email ?
+
+                                <button onClick={logOutHandler}
+                                    className="px-4 py-2 w-full text-white bg-gray-600 rounded-md shadow hover:bg-gray-800 focus:bg-gray-800"
+                                >
+                                    Sign Out
+                                </button>
+
+                                :
+
+
+                                <Link
+                                    to="/Login"
+                                    className="inline-block w-full px-4 py-2 text-center text-white bg-gray-600 rounded-md shadow hover:bg-gray-800 focus:bg-gray-800"
+                                >
+                                    Sign in
+                                </Link>
+                            }
                             <Link
                                 to="/signUp"
-                                className="inline-block w-full px-4 py-2 text-center text-gray-800 bg-white rounded-md shadow hover:bg-gray-100"
+                                className="inline-block w-full px-4 py-2 text-center text-gray-800 bg-white rounded-md shadow hover:bg-gray-300 focus:bg-gray-300"
                             >
                                 Sign up
                             </Link>
@@ -107,30 +119,30 @@ const Header = () => {
                     </div>
                 </div>
                 <div className="hidden space-x-2 md:inline-block">
-                  {  user?.email ? 
-                    <button onClick={logOutHandler}
-                        className="px-4 py-2 text-white bg-gray-600 rounded-md shadow hover:bg-gray-800"
-                    >
-                        Sign Out
-                    </button>
-                    :
-                    <Link
-                        to="/Login"
-                        className="px-4 py-2 text-white bg-green-600 rounded-md shadow hover:bg-gray-800"
-                    >
-                        Sign in
-                    </Link>
-                    
+                    {user?.email ?
+                        <button onClick={logOutHandler}
+                            className="px-4 py-2 text-white bg-gray-600 rounded-md shadow hover:bg-gray-800"
+                        >
+                            Sign Out
+                        </button>
+                        :
+                        <Link
+                            to="/Login"
+                            className="px-4 py-2 text-white bg-green-600 rounded-md shadow hover:bg-gray-800 focus:bg-gray-800"
+                        >
+                            Sign in
+                        </Link>
+
                     }
                     <Link
                         to="/signUp"
-                        className="px-4 py-2 text-gray-800 bg-white rounded-md shadow hover:bg-gray-100"
+                        className="px-4 py-2 text-gray-800 bg-white rounded-md shadow hover:bg-gray-300 focus:bg-gray-300"
                     >
                         Sign up
                     </Link>
                 </div>
             </div>
-        </nav>
+        </nav >
     );
 };
 

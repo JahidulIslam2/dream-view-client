@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import toast, { Toaster } from 'react-hot-toast';
+import toast from 'react-hot-toast';
 
 
 
-const notify = () => toast('Here is your toast.');
 
 const MyReviewCard = ({ reviewData }) => {
     const { name, userPhoto, message, email, _id } = reviewData;
@@ -12,7 +11,6 @@ const MyReviewCard = ({ reviewData }) => {
 
 //delete review
     const deleteHandler = (id) => {
-
         const accept = window.confirm('Confirm Delete Item!');
         if (accept) {
             fetch(`https://dream-view-server.vercel.app/review/${id}`, {
@@ -25,12 +23,12 @@ const MyReviewCard = ({ reviewData }) => {
                 .then(res => res.json())
                 .then(data => {
                     console.log(data);
+                    
                     if (reviews.deletedCount > 0) {
-                        alert('successfully Deleted');
-                        notify();
-                        <Toaster />
+                        toast.success('successfully Deleted')
                         const remaining = reviews.filter(p => p._id !== id)
                         setReview(remaining)
+                        
                     }
 
                 })
@@ -49,7 +47,7 @@ const MyReviewCard = ({ reviewData }) => {
         .then(res => res.json())
         .then(data => {
             console.log(data);
-            alert('update successfully')
+            toast.success('Successfully Added')
             if(data.modifiedCount > 0){
                 const remaining = reviews.filter(rvw => rvw._id !== id );
                 const approving = reviews.find(rvw => rvw._id === id);

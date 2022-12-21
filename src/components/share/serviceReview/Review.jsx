@@ -1,42 +1,42 @@
-import React, { useContext} from 'react';
+import React, { useContext } from 'react';
 import { ProvideContext } from '../../../provideAuth/ProvideAuth';
 
-const Review = ({detail}) => {
-    const {_id,name}=detail
-    const {user} =useContext(ProvideContext)
-    const photo =user?.photoURL;
-console.log(user?.email)
+const Review = ({ detail }) => {
+    const { _id, name } = detail
+    const { user } = useContext(ProvideContext)
+    const photo = user?.photoURL;
+    console.log(user?.email)
 
-    const handleForm =(event)=>{
+    const handleForm = (event) => {
         event.preventDefault();
-        const form= event.target;
-        const name =  form.name.value;
-        const email=user?.email || "Please Login First"
+        const form = event.target;
+        const name = form.name.value;
+        const email = user?.email || "Please Login First"
         const message = form.message.value;
         form.reset();
-        const review ={
+        const review = {
             name,
             email,
             message,
-            userPhoto:photo,
-            id:_id
-            }
+            userPhoto: photo,
+            id: _id
+        }
 
-            fetch('https://dream-view-server.vercel.app/review',{
-                method: 'POST',
-                headers: {
-                    'content-type': 'application/json',
-                },
-                body: JSON.stringify(review)
-            })
+        fetch('https://dream-view-server.vercel.app/review', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json',
+            },
+            body: JSON.stringify(review)
+        })
             .then(res => res.json())
             .then(data => {
-                 console.log(data)
+                console.log(data)
             })
-            .catch(err=>{
+            .catch(err => {
                 console.error(err)
             })
-        
+
 
     }
 
@@ -51,17 +51,17 @@ console.log(user?.email)
                     </div>
                     <img src="assets/svg/doodle.svg" alt="" className="p-6 h-52 md:h-64" />
                 </div>
-                <form onSubmit={handleForm}  novalidate="" className="space-y-6 ng-untouched ng-pristine ng-valid">
+                <form onSubmit={handleForm} noValidate="" className="space-y-6 ng-untouched ng-pristine ng-valid">
                     <div>
-                        <label for="name" className="text-sm">Full name</label>
+                        <label htmlFor="name" className="text-sm">Full name</label>
                         <input id="name" name='name' type="text" placeholder="Name" className="w-full p-3 rounded dark:bg-gray-800" />
                     </div>
                     <div>
-                        <label for="email" defaultValue={user?.email} className="text-sm">Email</label>
+                        <label htmlFor="email" defaultValue={user?.email} className="text-sm">Email</label>
                         <input id="email" name='email' type="email" placeholder='email' className="w-full p-3 rounded dark:bg-gray-800" />
                     </div>
                     <div>
-                        <label for="message" className="text-sm">Write Review</label>
+                        <label htmlFor="message" className="text-sm">Write Review</label>
                         <textarea id="message" name='message' rows="3" className="w-full p-3 rounded dark:bg-gray-800"></textarea>
                     </div>
                     <button type="submit" className="w-full p-3 text-sm font-bold tracking-wide uppercase rounded dark:bg-green-300 dark:text-gray-900">Submit Review</button>

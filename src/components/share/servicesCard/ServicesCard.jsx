@@ -39,7 +39,7 @@ const ServicesCard = ({ service }) => {
                     }
 
                     <Link to={`/serviceDetails/${_id}`}>
-                        <p className='text-lime-500 text-xl text-right hover:text-gray-800'>
+                        <p className='text-lime-500 text-xl text-right hover:text-gray-800 focus:text-gray-800'>
                             View Details
                         </p>
                     </Link>
