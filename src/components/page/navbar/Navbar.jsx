@@ -4,10 +4,11 @@ import { useState } from "react";
 import { Link } from 'react-router-dom';
 import { ProvideContext } from '../../../provideAuth/ProvideAuth';
 
-const Header = () => {
+const Navbar = () => {
     const { LogOut, user } = useContext(ProvideContext)
 
     const [navbar, setNavbar] = useState(false);
+
 
 
     const logOutHandler = () => {
@@ -22,13 +23,13 @@ const Header = () => {
     }
 
     return (
-        <nav className="w-full bg-gray-700 shadow">
+        <nav className="w-full bg-gray-900 shadow">
             <div className="justify-between px-4 mx-auto lg:max-w-7xl md:items-center md:flex md:px-8">
                 <div>
                     <div className="flex items-center justify-between py-3 md:py-5 md:block">
                         <Link to="#">
                             <h2 className="text-2xl font-bold text-white flex gap-2 justify-center">
-                                <img src={`/home.png`} className="w-9 h-auto" alt="icon" />
+                                <img src={`/home.png`} className="w-9 h-auto bg-white" alt="icon" />
                                 Dream View Architect
                             </h2>
                         </Link>
@@ -76,8 +77,9 @@ const Header = () => {
                             }`}
                     >
                         <ul className="items-center justify-center space-y-8 md:flex md:space-x-6 md:space-y-0">
-                            <li className="text-white hover:text-indigo-200 focus:text-indigo-300">
-                                <Link to="/">Home</Link>
+                            <li className=" text-white hover:text-indigo-200 focus:text-indigo-300">
+                                <Link to="/"
+                                >Home</Link>
                             </li>
                             <li className="text-white hover:text-indigo-200 focus:text-indigo-300">
                                 <Link to="/blog">Blog</Link>
@@ -146,4 +148,4 @@ const Header = () => {
     );
 };
 
-export default Header;
+export default Navbar;

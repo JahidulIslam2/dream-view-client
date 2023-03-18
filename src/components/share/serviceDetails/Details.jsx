@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom';
 import ServiceReview from '../serviceReview/ServiceReview';
 
 const Details = ({ detail }) => {
-    const { name, img, price, rating, descripion, _id } = detail;
+    const { name, img, price, rating, description, _id } = detail;
     return (
-        <div className='bg-blue-300'>
+        <div className='bg-blue-900'>
             <div className="p-5 mx-auto sm:p-10 md:p-16 dark:bg-blue-300 dark:text-gray-100">
                 <div className="flex flex-col max-w-3xl mx-auto overflow-hidden rounded">
                     <img src={img} alt="" className="w-full h-60 sm:h-96 dark:bg-gray-500" />
@@ -17,7 +17,7 @@ const Details = ({ detail }) => {
                             </p>
                         </div>
                         <div className="dark:text-gray-100">
-                            <p>{descripion}</p>
+                            <p>{description}</p>
                         </div>
                     </div>
                 </div>
@@ -25,7 +25,7 @@ const Details = ({ detail }) => {
 
             {/* Review Section */}
             <div>
-               <ServiceReview detail={detail} key={detail._id}></ServiceReview>
+                <ServiceReview detail={detail} key={detail._id}></ServiceReview>
             </div>
         </div>
     );

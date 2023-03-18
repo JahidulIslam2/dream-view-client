@@ -4,38 +4,36 @@ import React, { useEffect, useState } from 'react';
 import Review from './Review';
 import ReviewCard from './ReviewCard';
 
-const ServiceReview = ({detail}) => {
+const ServiceReview = ({ detail }) => {
 
-    const [reviewData,setReviewData ]=useState([]);
+    const [reviewData, setReviewData] = useState([]);
 
-    
-    useEffect(()=>{
+
+    useEffect(() => {
         fetch('https://dream-view-server.vercel.app/review')
-        .then(res => res.json())
-           .then(data => {
-            setReviewData(data)
-           })
-    },[])
-  
+            .then(res => res.json())
+            .then(data => {
+                setReviewData(data)
+            })
+    }, [])
+
 
 
     return (
         <div>
-           
-            
 
-         
+
             <div>
-              <Review detail={detail} key={detail._id}></Review>
+                <Review detail={detail} key={detail._id}></Review>
             </div>
-               {/* review input */}
+            {/* review input */}
             <div className='grid md:grid-cols-2 lg:grid-cols-2 my-4 m-4 gap-4 sm:grid-cols-1 sm:gap-4'>
-            
-            {
-                reviewData.map(review => <ReviewCard review={review} detail={detail}  key={review._id}></ReviewCard>)
 
-            }
-           
+                {
+                    reviewData.map(review => <ReviewCard review={review} detail={detail} key={review._id}></ReviewCard>)
+
+                }
+
             </div>
         </div>
     );

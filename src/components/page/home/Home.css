@@ -1,0 +1,16 @@
+@keyframes neon-glow {
+    0% {
+        text-shadow: 0 0 5px #ccdc53, 0 0 10px #fff, 0 0 20px #c70d0d, 0 0 30px #e8f0e8, 0 0 40px #77720a, 0 0 55px #eb5a11, 0 0 75px #3c3ce3;
+    }
+
+    100% {
+        text-shadow: 0 0 5px #15089b, 0 0 10px #fff, 0 0 20px #ecc60b, 0 0 30px #1bf01b, 0 0 40px #0d62e0, 0 0 55px #ecf0ee, 0 0 75px #093a68, 0 0 100px #faf7f7, 0 0 150px #cde70c;
+    }
+}
+
+.animate-neon-glow {
+    animation-name: neon-glow;
+    animation-duration: 1.5s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+}
