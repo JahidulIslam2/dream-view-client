@@ -20,7 +20,7 @@ const ServiceReview = ({ detail }) => {
 
 
     return (
-        <div>
+        <div className='pb-9'>
 
 
             <div>

@@ -24,7 +24,7 @@ const ServicesCard = ({ service }) => {
     const handleRating = (newRating, id) => {
         console.log(newRating, id)
 
-        fetch(`http://localhost:5000/services/${id}`, {
+        fetch(`https://dream-view-server.vercel.app/services/${id}`, {
             method: 'PATCH',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(newRating)

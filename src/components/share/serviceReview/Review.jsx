@@ -64,7 +64,7 @@ const Review = ({ detail }) => {
                         <label htmlFor="message" className="text-sm">Write Review</label>
                         <textarea id="message" name='message' rows="3" className="w-full p-3 rounded dark:bg-gray-800"></textarea>
                     </div>
-                    <button type="submit" className="w-full p-3 text-sm font-bold tracking-wide uppercase rounded dark:bg-green-300 dark:text-gray-900">Submit Review</button>
+                    <button type="submit" className="w-full p-3 text-sm font-bold tracking-wide uppercase rounded dark:bg-green-600 hover:bg-blue-500 dark:text-gray-900">Submit Review</button>
                 </form>
             </div>
         </div>
